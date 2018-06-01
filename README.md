@@ -9,7 +9,7 @@ Para ejecutar el proyecto se puede hacer desde la carpeta src/main/java/controll
 
 A continuacion se detallan las operaciones posibles a realizar consumiendo el servicio por cliente postman o curl
 
-
+### GET ALL
 <pre>
 REQUEST:
     Metodo http: GET
@@ -37,4 +37,32 @@ RESPONSE:
           "warranty": "desc"
       }
     ]
+</pre>
+
+### GET BY ID
+<pre>
+REQUEST:
+    Metodo http: GET
+            URL: http://localhost:9393/items/ML0001
+        Headers: Content-Type:application/json
+RESPONSE:
+    {
+      "id": "ML0001",
+      "available_quantity": "2",
+      "currency_id": "ARS",
+      "title": "Item prueba.",
+      "price": "80",
+      "condition": "new",
+      "description": "Producto desc",
+      "listing_type_id": "bronze",
+      "pictures": [
+          {
+              "source": "img_url"
+          }
+      ],
+      "buying_mode": "buy_it_now",
+      "category_id": "MLA5529",
+      "video_id": "youtube_ID",
+      "warranty": "desc"
+    }
 </pre>
