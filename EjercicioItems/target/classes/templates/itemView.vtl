@@ -1,0 +1,48 @@
+<html>
+<header>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</header>
+<div class="container">
+<a href='/list'>Volver</a>
+<form id='article-edit-form' method='POST' action='/item/edit/$idItem'>
+
+        Item ID: <input type='text' name='id' value="$idItem" class="form-control" required/>
+        <br/>
+        Titulo: <input type='text' name='title' value='$title' class="form-control"/>
+        <br/>
+        Categoria: <input type='text' name='category_id' value='$category_id' class="form-control"/>
+        <br/>
+        Precio: <input type='text' name='price' value='$price'class="form-control"/>
+        <br/>
+        Moneda: <input type='text' name='currency_id' value='$currency_id' class="form-control"/>
+        <br/>
+        Cantidad disponible: <input type='text' name='available_quantity' value='$available_quantity' class="form-control"/>
+        <br/>
+        Forma de compra: <input type='text' name='buying_mode' value='$buying_mode' class="form-control"/>
+        <br/>
+        Condicion: <input type='text' name='condition' value='$condition' class="form-control"/>
+        <br/>
+        Descripcion: <input type='text' name='description' value='$description' class="form-control"/>
+        <br/>
+        ID Video: <input type='text' name='video_id' value='$video_id' class="form-control"/>
+        <br/>
+        warranty: <input type='text' name='warranty' value='$warranty' class="form-control"/>
+        <br/>
+        pictures:
+        #foreach ($row in $pictures)
+        <input type='text' name='pic' value='$row.getSource()' class="form-control"/>
+        <br/>
+        #end
+</form>
+<input type='submit' value='Guardar' form='article-edit-form' />
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
