@@ -31,11 +31,12 @@
         <br/>
         ID Video: <input type='text' name='video_id' value='$video_id' class="form-control"/>
         <br/>
-        warranty: <input type='text' name='warranty' value='$warranty' class="form-control"/>
+        garantia: <input type='text' name='warranty' value='$warranty' class="form-control"/>
         <br/>
         pictures:
         #foreach ($row in $pictures)
-        <input type='text' name='pic' value='$row.getSource()' class="form-control"/>
+        <!--<input type='text' name='pic' value='$row.getSource()' class="form-control"/>-->
+        <a href='$row.getSource()'>$row.getSource()</a>
         <br/>
         #end
 </form>
