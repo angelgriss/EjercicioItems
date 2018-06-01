@@ -142,3 +142,5 @@ RESPONSE:
 </pre>
 
 ### Para el caso de ejecutar el controlador que maneja las vistas basta con ingresar a la siguiente direccion para poder hacer las opraciones CRUD de la entidad Items: http://localhost:9494/list
+
+### El ejercicio tambien contiene un set de test en la ruta src/test/java clase itemsTest
