@@ -66,3 +66,77 @@ RESPONSE:
       "warranty": "desc"
     }
 </pre>
+
+### PUT
+<pre>
+REQUEST:
+    Metodo http: PUT
+            URL: http://localhost:9393/items/ML0001
+        Headers: Content-Type:application/json
+           Body:
+                {
+                  "title":"Item de test - No Ofertar",
+                  "category_id":"MLA558080",
+                  "price":10,
+                  "currency_id":"ARS",
+                  "available_quantity":1,
+                  "buying_mode":"buy_it_now",
+                  "listing_type_id":"bronze",
+                  "condition":"used",
+                  "description": "Itempepellllñkñkñ",
+                  "video_id": "YOUTUBE_ID_HERE",
+                  "warranty": "12 months by Ray Ban",
+                  "pictures":[
+                    {"source":"http://upload.wikimedia.org/wikipedia/commons/f/fd/Ray_Ban_Original_Wayfarer.jpg"},
+                    {"source":"http://en.wikipedia.org/wiki/File:Teashades.gif"}
+                  ]
+                }
+                
+RESPONSE:
+   {
+    "status": "SUCCESS"
+   }
+</pre>
+
+### POST
+<pre>
+REQUEST:
+    Metodo http: POST
+            URL: http://localhost:9393/items/ML0002
+        Headers: Content-Type:application/json
+           Body:
+                {
+                  "title":"Item de test - No Ofertar",
+                  "category_id":"MLA558080",
+                  "price":10,
+                  "currency_id":"ARS",
+                  "available_quantity":1,
+                  "buying_mode":"buy_it_now",
+                  "listing_type_id":"bronze",
+                  "condition":"used",
+                  "description": "Itempepellllñkñkñ",
+                  "video_id": "YOUTUBE_ID_HERE",
+                  "warranty": "12 months by Ray Ban",
+                  "pictures":[
+                    {"source":"http://upload.wikimedia.org/wikipedia/commons/f/fd/Ray_Ban_Original_Wayfarer.jpg"},
+                    {"source":"http://en.wikipedia.org/wiki/File:Teashades.gif"}
+                  ]
+                }
+                
+RESPONSE:
+   {
+    "status": "SUCCESS"
+   }
+</pre>
+
+### DELETE
+<pre>
+REQUEST:
+    Metodo http: DELETE
+            URL: http://localhost:9393/items/ML0001
+        Headers: Content-Type:application/json
+RESPONSE:
+  {
+    "status": "SUCCESS"
+  }
+</pre>
