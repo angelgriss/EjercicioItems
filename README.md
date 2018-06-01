@@ -140,3 +140,5 @@ RESPONSE:
     "status": "SUCCESS"
   }
 </pre>
+
+### Para el caso de ejecutar el controlador que maneja las vistas basta con ingresar a la siguiente direccion para poder hacer las opraciones CRUD de la entidad Items: http://localhost:9494/list
