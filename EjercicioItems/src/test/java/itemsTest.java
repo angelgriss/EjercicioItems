@@ -9,10 +9,13 @@ import org.junit.*;
 
 public class itemsTest {
 
+    //private static String uriTest="http://localhost:9393";
+    private static String uriTest="http://localhost:1500";
+
     @Test
     public void getItem_Validar_Status_200OK()
     {
-        RestAssured.baseURI ="http://localhost:9393";
+        RestAssured.baseURI =uriTest;
         RequestSpecification httpRequest=RestAssured.given();
         Response response=httpRequest.get("/items/ML0001");
         int statusCod=response.getStatusCode();
@@ -22,7 +25,7 @@ public class itemsTest {
     @Test
     public void getItem_Validar_Item_Inexistente()
     {
-        RestAssured.baseURI ="http://localhost:9393";
+        RestAssured.baseURI =uriTest;
 
         String rtdo =RestAssured.
                 given().
@@ -39,7 +42,7 @@ public class itemsTest {
     @Test
     public void getAll_Validar_Status_200OK()
     {
-        RestAssured.baseURI ="http://localhost:9393";
+        RestAssured.baseURI =uriTest;
         RequestSpecification httpRequest=RestAssured.given();
         Response response=httpRequest.get("/items/all");
         int statusCode=response.getStatusCode();
@@ -49,7 +52,7 @@ public class itemsTest {
     @Test
     public void postItem_Validar_Request_mal_formado()
     {
-        RestAssured.baseURI ="http://localhost:9393";
+        RestAssured.baseURI =uriTest;
         RequestSpecification httpRequest=RestAssured.given();
 
         Response response=httpRequest.body("asdf").post("/items/ML0001");
@@ -60,7 +63,7 @@ public class itemsTest {
     @Test
     public void postItem_Validar_Status_200OK()
     {
-        RestAssured.baseURI ="http://localhost:9393";
+        RestAssured.baseURI =uriTest;
         RequestSpecification httpRequest=RestAssured.given();
 
         Item item=new Item();
@@ -93,7 +96,7 @@ public class itemsTest {
     @Test
     public void postItem_Validar_Campos_Nulos()
     {
-        RestAssured.baseURI ="http://localhost:9393";
+        RestAssured.baseURI =uriTest;
         RequestSpecification httpRequest=RestAssured.given();
 
         Item item=new Item();
@@ -125,7 +128,7 @@ public class itemsTest {
     @Test
     public void putItem_Validar_Campos_Nulos()
     {
-        RestAssured.baseURI ="http://localhost:9393";
+        RestAssured.baseURI =uriTest;
         RequestSpecification httpRequest=RestAssured.given();
 
         Item item=new Item();
@@ -147,7 +150,7 @@ public class itemsTest {
 
         String reqbody= new Gson().toJson(item);
 
-        Response response=httpRequest.body(reqbody).post("/items/ML000M1");
+        Response response=httpRequest.body(reqbody).put("/items/ML000M1");
 
         Assert.assertEquals(true,response.then().extract().body().asString().contains("No se han completado todos los campos requeridos"));
     }
@@ -155,10 +158,10 @@ public class itemsTest {
     @Test
     public void putItem_Validar_Request_mal_formado()
     {
-        RestAssured.baseURI ="http://localhost:9393";
+        RestAssured.baseURI =uriTest;
         RequestSpecification httpRequest=RestAssured.given();
 
-        Response response=httpRequest.body("asdf").put("/items/all");
+        Response response=httpRequest.body("asdf").put("/items/ML000M1");
 
         Assert.assertEquals("400",String.valueOf(response.getStatusCode()));
     }
@@ -166,7 +169,7 @@ public class itemsTest {
     @Test
     public void putItem_Validar_Status_200OK()
     {
-        RestAssured.baseURI ="http://localhost:9393";
+        RestAssured.baseURI =uriTest;
         RequestSpecification httpRequest=RestAssured.given();
 
         Item item=new Item();
@@ -199,7 +202,7 @@ public class itemsTest {
     @Test
     public void putItem_Validar_Item_Inexistente()
     {
-        RestAssured.baseURI ="http://localhost:9393";
+        RestAssured.baseURI =uriTest;
         RequestSpecification httpRequest=RestAssured.given();
         Item item=new Item();
 
@@ -231,7 +234,7 @@ public class itemsTest {
     @Test
     public void deleteItem_Validar_Item_Inexistente()
     {
-        RestAssured.baseURI ="http://localhost:9393";
+        RestAssured.baseURI =uriTest;
 
         String rtdo =RestAssured.
                 given().
@@ -248,7 +251,7 @@ public class itemsTest {
     @Test
     public void deleteItem_Validar_Status_200OK()
     {
-        RestAssured.baseURI ="http://localhost:9393";
+        RestAssured.baseURI =uriTest;
         RequestSpecification httpRequest=RestAssured.given();
         Response response=httpRequest.delete("/items/ML000M1");
         int statusCode=response.getStatusCode();

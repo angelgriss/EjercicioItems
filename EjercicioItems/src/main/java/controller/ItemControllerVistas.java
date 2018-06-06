@@ -145,7 +145,7 @@ public class ItemControllerVistas {
 
                 Pictures[] pictures=new Pictures[1];
                 Pictures pic=new Pictures();
-                pic.setSource("img_url");
+                pic.setSource("https://goo.gl/images/yqhc4a");
                 pictures[0]=pic;
                 item.setPictures(pictures);
 
